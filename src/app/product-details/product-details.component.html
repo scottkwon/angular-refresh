@@ -3,5 +3,5 @@
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
   <h4>Price: {{ product.price | currency }}</h4>
-  <p>Description: {{ product.description }}</p>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
 </div>
