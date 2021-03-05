@@ -8,11 +8,13 @@
 </div>
 
 <div>
-	<h5>Total Price: {{ totalCost | currency }}</h5>
+	<h5 *ngIf="totalCost > 0">Total Price: {{ totalCost | currency }}</h5>
+	<h5 *ngIf="totalCost == 0">There are no items in your cart</h5>
 </div>
 
-
+<hr />
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+	<h4>Shipping Information:</h4>
 	<div>
 		<label for="name">Name:</label>
 		<input type="name" type="text" formControlName="name"/>
